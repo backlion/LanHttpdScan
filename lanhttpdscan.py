@@ -11,7 +11,7 @@ requests = eventlet.import_patched('requests.__init__')
 import time
 
 
-port_list = ['80','6379', '7001','7002','9001','9002']
+port_list = ['80','443','6379', '7001','7002','8443','9001','9002']
 for port in range(8000,8090):
     port_list.append(str(port))
 header = {'User-Agent' : 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36','Connection':'close'}
