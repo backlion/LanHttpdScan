@@ -22,10 +22,10 @@ def scan(url):
     title = ''
     banner= ''
     try:
-        resp = requests.get(url,timeout=2)
+        resp = requests.get(url,headers=header,timeout=2)
         pattern = re.compile(r'<title>(.*?)</title>')
         
-        match = pattern.search(resp.content,headers=header)
+        match = pattern.search(resp.content)
         title = match.group(1)[:25] if match else 'None'
 
         status = resp.status_code
@@ -73,5 +73,3 @@ if __name__=="__main__":
         ip_pool.spawn(run, ip, thread)
     ip_pool.waitall()
     print "***************************************************************************************"
-
-
